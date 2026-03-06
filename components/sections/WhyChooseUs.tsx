@@ -73,7 +73,7 @@ export default function WhyChooseUs() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
         >
           {features.map((feature, index) => {

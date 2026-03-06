@@ -78,7 +78,7 @@ function WorkflowStep({ step, index }: { step: Step; index: number }) {
     <motion.div
       initial={{ opacity: 0, y: fromTop ? -40 : 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.6, delay: (index % 4) * 0.12 }}
       className="group p-7 rounded-xl bg-white border border-slate-200 hover:border-[#c46a2d]/40 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg"
     >

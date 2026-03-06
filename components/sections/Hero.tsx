@@ -14,6 +14,7 @@ export default function Hero() {
         <motion.div
           initial={{ x: -40, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-xl"
         >
@@ -55,7 +56,8 @@ export default function Hero() {
         <motion.div
           initial={{ x: 40, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.2, ease: "easeOut", delay: 0.1 }}
           className="relative flex justify-center"
         >
           {/* glow */}
