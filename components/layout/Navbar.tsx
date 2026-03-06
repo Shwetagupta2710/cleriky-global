@@ -91,7 +91,7 @@ export default function Navbar() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-12 text-[15px] font-medium">
               <NavItem href="/">Home</NavItem>
-              <NavItem href="#">About Us</NavItem>
+              <NavItem href="/#about">About Us</NavItem>
 
               {/* Services trigger — no dropdown logic here, just the button */}
               <div className="relative flex items-center h-12">

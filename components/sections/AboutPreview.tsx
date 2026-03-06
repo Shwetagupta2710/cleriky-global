@@ -6,7 +6,10 @@ import Link from "next/link";
 
 export default function AboutPreview() {
   return (
-    <section className="relative py-28 bg-gradient-to-b from-white to-[#f4f6f9] overflow-hidden">
+    <section
+      id="about"
+      className="relative py-28 bg-gradient-to-b from-white to-[#f4f6f9] overflow-hidden scroll-mt-32"
+    >
       {/* subtle background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_60%,rgba(196,106,45,0.05),transparent_60%)] pointer-events-none" />
 
