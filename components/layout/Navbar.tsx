@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -79,13 +80,15 @@ export default function Navbar() {
             }`}
           >
             {/* Logo */}
-            <Link href="/" className="leading-tight">
-              <span className="block text-[20px] font-serif tracking-[0.08em] text-[#0B1F3B]">
-                Cleriky
-              </span>
-              <span className="block text-[11px] tracking-[0.35em] uppercase text-[#0B1F3B]/60">
-                Global
-              </span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/cg1.png"
+                alt="Cleriky Global"
+                width={200}
+                height={70}
+                priority
+                className="h-12 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}
