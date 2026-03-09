@@ -11,11 +11,12 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <Services />
       <Software />
       <WhyChooseUs />
       <Workflow />
       <AboutPreview />
-      <Services />
+
       <CTA />
       <Footer />
     </main>
