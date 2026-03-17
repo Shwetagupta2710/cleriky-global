@@ -51,11 +51,11 @@ export default function Navbar() {
   const services = [
     {
       title: "Accounting & Bookkeeping",
-      href: "/services/accounting-bookkeeping",
+      href: "/services#accounting-bookkeeping",
     },
-    { title: "E-Commerce Accounting", href: "/services/ecommerce-accounting" },
-    { title: "Sales Tax & VAT Compliance", href: "/services/sales-tax-vat" },
-    { title: "Fractional CFO Services", href: "/services/fractional-info" },
+    { title: "E-Commerce Accounting", href: "/services#ecommerce-accounting" },
+    { title: "Sales Tax & VAT Compliance", href: "/services#sales-tax-vat" },
+    { title: "Fractional CFO Services", href: "/services#fractional-cfo" },
   ];
 
   return (
@@ -92,47 +92,44 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-12 text-[15px] font-medium">
-              <NavItem href="/">Home</NavItem>
-              <NavItem href="/#about">About Us</NavItem>
+            <div className="hidden md:flex items-center gap-12">
+              {/* Navigation */}
+              <nav className="flex items-center gap-12 text-[15px] font-medium">
+                <NavItem href="/">Home</NavItem>
+                <NavItem href="/#about">About Us</NavItem>
 
-              {/* Services trigger — no dropdown logic here, just the button */}
-              <div className="relative flex items-center h-12">
-                <button
-                  ref={servicesBtnRef}
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
-                  className="flex items-center gap-1 text-[#0B1F3B]/80 hover:text-[#0B1F3B] transition-colors duration-300 outline-none"
-                >
-                  Services
-                  <ChevronDown
-                    size={14}
-                    className={`transition-transform duration-300 ${
-                      servicesOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-              </div>
+                <div className="relative flex items-center h-12">
+                  <button
+                    ref={servicesBtnRef}
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
+                    className="flex items-center gap-1 text-[#0B1F3B]/80 hover:text-[#0B1F3B]"
+                  >
+                    Services
+                    <ChevronDown size={14} />
+                  </button>
+                </div>
 
-              <NavItem href="#">Resources</NavItem>
-              <NavItem href="#">Contact Us</NavItem>
-            </nav>
+                <NavItem href="/discover-the-difference">
+                  Discover the Difference
+                </NavItem>
+                <NavItem href="/contact">Contact Us</NavItem>
+              </nav>
 
-            {/* CTA + Mobile Toggle */}
-            <div className="flex items-center gap-6">
+              {/* CTA */}
               <Link href="#">
-                <button className="hidden md:flex px-7 py-3 rounded-full bg-[#0B1F3B] text-white text-sm font-semibold transition-all duration-300 hover:bg-[#c46a2d] hover:-translate-y-[2px] hover:shadow-lg">
+                <button className="w-full px-5 py-2.5 rounded-full bg-[#0B1F3B] text-white text-sm font-semibold hover:bg-[#c46a2d] transition">
                   Book a Call
                 </button>
               </Link>
-
-              <button
-                onClick={() => setOpen(!open)}
-                className="md:hidden text-[#0B1F3B]"
-              >
-                {open ? <X size={24} /> : <Menu size={24} />}
-              </button>
             </div>
+
+            <button
+              onClick={() => setOpen(!open)}
+              className="md:hidden text-[#0B1F3B]"
+            >
+              {open ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </motion.div>
 
           {/* Mobile Menu */}
@@ -158,12 +155,13 @@ export default function Navbar() {
                 </div>
                 <MobileItem href="#">Resources</MobileItem>
                 <MobileItem href="#">Contact Us</MobileItem>
-                <Link
-                  href="#"
-                  className="mt-4 px-6 py-3 rounded-full bg-[#0B1F3B] text-white text-center font-medium hover:bg-[#c46a2d] transition"
-                >
-                  Book a Call
-                </Link>
+                <div className="flex items-center ml-4">
+                  <Link href="#">
+                    <button className="w-full px-6 py-3 rounded-full bg-[#0B1F3B] text-white text-sm font-semibold hover:bg-[#c46a2d] transition">
+                      Book a Call
+                    </button>
+                  </Link>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
