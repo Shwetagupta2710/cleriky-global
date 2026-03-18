@@ -142,7 +142,7 @@ export default function Navbar() {
                 transition={{ duration: 0.25 }}
                 className="mt-4 rounded-3xl bg-white shadow-xl border border-slate-200 p-8 flex flex-col gap-6 md:hidden"
               >
-                <MobileItem href="#">About Us</MobileItem>
+                <MobileItem href="/">About Us</MobileItem>
                 <div className="flex flex-col gap-3">
                   <p className="text-sm uppercase tracking-widest text-slate-400">
                     Services
@@ -153,8 +153,10 @@ export default function Navbar() {
                     </MobileItem>
                   ))}
                 </div>
-                <MobileItem href="#">Resources</MobileItem>
-                <MobileItem href="#">Contact Us</MobileItem>
+                <MobileItem href="/discover-the-difference">
+                  Discover the Difference
+                </MobileItem>
+                <MobileItem href="/contact">Contact Us</MobileItem>
                 <div className="flex items-center ml-4">
                   <Link href="#">
                     <button className="w-full px-6 py-3 rounded-full bg-[#0B1F3B] text-white text-sm font-semibold hover:bg-[#c46a2d] transition">
