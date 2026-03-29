@@ -14,7 +14,6 @@ import {
   TrendingUp,
   Clock,
   Star,
-  ChevronRight,
 } from "lucide-react";
 import Image from "next/image";
 import Footer from "@/components/sections/Footer";
@@ -34,6 +33,7 @@ interface StatItem {
   suffix: string;
   label: string;
   sublabel: string;
+  badge?: string;
 }
 
 interface WhyItem {
@@ -131,10 +131,10 @@ const stats: StatItem[] = [
     sublabel: "Multi-tier QC process",
   },
   {
-    value: 24,
-    suffix: "/7",
-    label: "Support",
-    sublabel: "Across all time zones",
+    value: 99,
+    suffix: ".9%",
+    label: "Process Precision",
+    sublabel: "Built on layered review",
   },
   {
     value: 50,
@@ -145,8 +145,8 @@ const stats: StatItem[] = [
   {
     value: 10,
     suffix: "+",
-    label: "Countries",
-    sublabel: "Global compliance coverage",
+    label: "Industries Served",
+    sublabel: "Diverse sector experience",
   },
 ];
 
@@ -188,7 +188,7 @@ const process = [
   },
 ];
 
-// ─── Scroll-safe counter — native IntersectionObserver, no ref conflict ───────
+// ─── Scroll-safe counter ──────────────────────────────────────────────────────
 function Counter({
   value,
   suffix,
@@ -199,6 +199,9 @@ function Counter({
   const [count, setCount] = useState(0);
   const [fired, setFired] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
+
+  // For "99.9%" we animate to 99 then show ".9%" suffix
+  const isDecimal = suffix.startsWith(".");
 
   useEffect(() => {
     const el = wrapperRef.current;
@@ -239,7 +242,7 @@ function Counter({
         transition={{ duration: 0.6, delay: delay / 1000 }}
         className="group text-center p-8 rounded-2xl border border-slate-200 bg-white hover:border-[#c46a2d]/40 hover:shadow-lg transition-all duration-300"
       >
-        <div className="flex items-end justify-center gap-1 mb-2">
+        <div className="flex items-end justify-center gap-0.5 mb-2">
           <span className="text-5xl font-serif font-semibold text-[#0B1F3B]">
             {count}
           </span>
@@ -313,8 +316,6 @@ export default function DiscoverDifference() {
       {/* ══ HERO ══════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#f6f8fb] pt-32 pb-28 md:pt-36 md:pb-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_35%,rgba(234,241,251,0.6),transparent_55%)] pointer-events-none" />
-
-        {/* subtle dot grid */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.35]"
           style={{
@@ -351,7 +352,6 @@ export default function DiscoverDifference() {
               cross-border expertise.
             </p>
 
-            {/* mini-stats row */}
             <div className="mt-10 flex gap-8">
               {[
                 { n: "200+", l: "Firms served" },
@@ -399,7 +399,7 @@ export default function DiscoverDifference() {
                 style={{ borderRadius: "60% 40% 58% 42% / 42% 60% 40% 58%" }}
               >
                 <Image
-                  src="/hero.jpg"
+                  src="/discover.jpg"
                   alt="Finance professionals at Cleriky Global"
                   fill
                   className="object-cover"
@@ -435,34 +435,48 @@ export default function DiscoverDifference() {
       </section>
 
       {/* ══ MISSION STRIP ════════════════════════════════════════════════ */}
-      <section className="py-16 px-6 border-y border-slate-100 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-serif font-light max-w-2xl leading-snug text-[#0B1F3B]"
-          >
-            &ldquo;Outsourcing finance isn&apos;t a cost decision.{" "}
-            <span className="text-[#c46a2d] italic">
-              It&apos;s a strategic one.
-            </span>
-            &rdquo;
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, x: 16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <p className="text-xs uppercase tracking-[0.25em] text-[#c46a2d] font-medium mb-2">
-              Our Promise
-            </p>
-            <p className="text-sm text-slate-500 max-w-xs leading-relaxed">
-              Cleriky Global serves accounting firms and finance leaders who
-              demand precision, discretion, and scale — without compromise.
-            </p>
-          </motion.div>
+      <section className="py-20 px-6 border-y border-slate-100 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-stretch gap-0 rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+            {/* Quote side */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex-1 px-10 py-12 bg-[#f6f8fb] flex flex-col justify-center"
+            >
+              <div className="w-7 h-[2px] bg-[#c46a2d] mb-6" />
+              <p className="text-2xl md:text-3xl font-serif font-light leading-snug text-[#0B1F3B]">
+                &ldquo;Outsourcing finance isn&apos;t a cost decision.{" "}
+                <span className="text-[#c46a2d] italic">
+                  It&apos;s a strategic one.
+                </span>
+                &rdquo;
+              </p>
+            </motion.div>
+
+            {/* Divider */}
+            <div className="hidden md:block w-px bg-slate-200 flex-shrink-0" />
+            <div className="block md:hidden h-px bg-slate-200 w-full flex-shrink-0" />
+
+            {/* Promise side */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="flex-1 px-10 py-12 bg-white flex flex-col justify-center"
+            >
+              <p className="text-xs uppercase tracking-[0.3em] text-[#c46a2d] font-medium mb-4">
+                Our Promise
+              </p>
+              <p className="text-base text-slate-500 leading-relaxed max-w-sm">
+                Cleriky Global serves accounting firms and finance leaders who
+                demand precision, discretion, and scale — without compromise.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -638,9 +652,7 @@ export default function DiscoverDifference() {
             <div className="mt-4 h-[2px] w-16 bg-[#c46a2d]" />
           </motion.div>
 
-          {/* connected timeline */}
           <div className="relative grid md:grid-cols-4 gap-0">
-            {/* connector line */}
             <div className="hidden md:block absolute top-5 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#c46a2d]/25 to-transparent" />
 
             {process.map((p, i) => (
@@ -652,7 +664,6 @@ export default function DiscoverDifference() {
                 transition={{ delay: i * 0.1 }}
                 className="group relative px-6 pb-8 pt-0"
               >
-                {/* dot */}
                 <div className="relative z-10 w-10 h-10 rounded-full border-2 border-slate-200 bg-white flex items-center justify-center mb-8 group-hover:border-[#c46a2d] transition-colors duration-300">
                   <span className="text-xs font-semibold text-slate-400 group-hover:text-[#c46a2d] transition-colors duration-300">
                     {p.step}
@@ -664,7 +675,6 @@ export default function DiscoverDifference() {
                 <p className="text-sm text-slate-500 leading-relaxed">
                   {p.desc}
                 </p>
-                {/* hover underline */}
                 <div className="mt-4 h-[2px] w-0 group-hover:w-10 bg-[#c46a2d] transition-all duration-400" />
               </motion.div>
             ))}
@@ -681,7 +691,6 @@ export default function DiscoverDifference() {
             viewport={{ once: true }}
             className="relative bg-gradient-to-br from-[#0B1F3B] to-[#1a3560] rounded-3xl p-12 md:p-16 overflow-hidden"
           >
-            {/* accent orb */}
             <div
               className="absolute -top-12 -right-12 w-72 h-72 rounded-full pointer-events-none"
               style={{
@@ -690,7 +699,6 @@ export default function DiscoverDifference() {
                 filter: "blur(40px)",
               }}
             />
-            {/* dot grid overlay */}
             <div
               className="absolute inset-0 rounded-3xl opacity-[0.06] pointer-events-none"
               style={{

@@ -19,7 +19,6 @@ const company = [
   { label: "About Us", href: "/#about" },
   { label: "Discover the Difference", href: "/discover-the-difference" },
   { label: "Contact Us", href: "/contact" },
-  { label: "Resources", href: "#" },
 ];
 
 export default function Footer() {
@@ -53,7 +52,7 @@ export default function Footer() {
       {/* ─── SINGLE CONTAINER ─────────────────────────────────────────── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
         {/* ── MAIN GRID ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 pt-16 pb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 pt-16 pb-10">
           {/* Brand */}
           <div>
             <h3
@@ -72,14 +71,14 @@ export default function Footer() {
 
             <div className="space-y-3">
               <a
-                href="mailto:shwetaguptas2710@gmail.com"
+                href="mailto:vinita@cleriky.com"
                 className="flex items-start gap-3 group"
               >
                 <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center text-[#c46a2d] group-hover:bg-[#c46a2d]/15 transition-colors duration-300 flex-shrink-0 mt-0.5">
                   <Mail size={13} />
                 </div>
-                <span className="text-xs text-slate-400 group-hover:text-white transition-colors duration-300 leading-relaxed break-all">
-                  shwetaguptas2710@gmail.com
+                <span className="text-sm text-slate-400 group-hover:text-white transition-colors duration-300 leading-relaxed break-all">
+                  vinita@cleriky.com
                 </span>
               </a>
               <a
@@ -97,7 +96,7 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center text-[#c46a2d] flex-shrink-0">
                   <MapPin size={13} />
                 </div>
-                <span className="text-sm text-slate-400">United States</span>
+                <span className="text-sm text-slate-400">Ahmedabad, India</span>
               </div>
             </div>
           </div>
@@ -147,46 +146,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Hours + Coverage */}
-          <div>
-            <h4
-              className="text-base font-semibold text-white mb-5 tracking-wide"
-              style={{ fontFamily: "'Georgia','Times New Roman',serif" }}
-            >
-              Working Hours
-            </h4>
-            <div className="space-y-4">
-              {[
-                { day: "Mon – Fri", time: "9:00 AM – 6:00 PM EST" },
-                { day: "Saturday", time: "By appointment" },
-                { day: "Sunday", time: "Closed" },
-              ].map((h) => (
-                <div key={h.day}>
-                  <p className="text-xs uppercase tracking-widest text-slate-600 mb-0.5">
-                    {h.day}
-                  </p>
-                  <p className="text-sm text-slate-400">{h.time}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 pt-6 border-t border-white/[0.06]">
-              <p className="text-xs uppercase tracking-[0.2em] text-[#c46a2d] mb-3">
-                Global Coverage
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["US", "UK", "UAE", "CA", "AU", "IN"].map((c) => (
-                  <span
-                    key={c}
-                    className="px-2.5 py-1 rounded-md text-[11px] font-semibold text-slate-400 border border-white/10 bg-white/[0.03]"
-                  >
-                    {c}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* ── BOTTOM BAR ── */}
@@ -205,11 +164,11 @@ export default function Footer() {
               </Link>
             ))}
             <a
-              href="mailto:shwetaguptas2710@gmail.com"
+              href="mailto:vinita@cleriky.com"
               className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-[#c46a2d] transition-colors duration-300"
             >
               <Mail size={11} />
-              shwetaguptas2710@gmail.com
+              vinita@cleriky.com
             </a>
           </div>
         </div>

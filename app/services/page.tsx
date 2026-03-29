@@ -46,7 +46,7 @@ const services: Service[] = [
       "Financial Statement Preparation",
     ],
     icon: <Calculator size={22} strokeWidth={1.8} />,
-    image: "/hero.jpg", // replace with your actual image
+    image: "/service2.jpg", // replace with your actual image
     imageAlt: "Accounting and bookkeeping professionals",
   },
   {
@@ -63,7 +63,7 @@ const services: Service[] = [
       "Multi-Currency Reporting",
     ],
     icon: <ShoppingCart size={22} strokeWidth={1.8} />,
-    image: "/hero.jpg", // replace with your actual image
+    image: "/service1.jpg", // replace with your actual image
     imageAlt: "E-commerce accounting services",
   },
   {
@@ -80,7 +80,7 @@ const services: Service[] = [
       "Tax Authority Communication",
     ],
     icon: <ReceiptText size={22} strokeWidth={1.8} />,
-    image: "/hero.jpg", // replace with your actual image
+    image: "/service5.png", // replace with your actual image
     imageAlt: "Tax and VAT compliance services",
   },
   {
@@ -97,7 +97,7 @@ const services: Service[] = [
       "Growth Strategy Support",
     ],
     icon: <BarChart3 size={22} strokeWidth={1.8} />,
-    image: "/hero.jpg", // replace with your actual image
+    image: "/service4.webp", // replace with your actual image
     imageAlt: "Fractional CFO and financial strategy",
   },
 ];

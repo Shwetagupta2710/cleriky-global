@@ -8,11 +8,9 @@ import {
   MapPin,
   Mail,
   Phone,
-  Clock,
   ArrowRight,
   CheckCircle2,
   Send,
-  Globe,
   MessageSquare,
   Briefcase,
 } from "lucide-react";
@@ -146,7 +144,7 @@ export default function ContactPage() {
           firm_name: form.firm_name || "Not provided",
           service: form.service || "Not specified",
           message: form.message,
-          to_email: "shwetaguptas2710@gmail.com",
+          to_email: "vinita@cleriky.com",
           reply_to: form.from_email,
         },
         EMAILJS_PUBLIC_KEY,
@@ -155,7 +153,7 @@ export default function ContactPage() {
     } catch (err) {
       console.error(err);
       setError(
-        "Something went wrong. Please email us directly at shwetaguptas2710@gmail.com",
+        "Something went wrong. Please email us directly at vinita@cleriky.com",
       );
     } finally {
       setLoading(false);
@@ -233,7 +231,7 @@ export default function ContactPage() {
             </div>
           </motion.div>
 
-          {/* Right — info cards */}
+          {/* Right — info cards (3 cards only) */}
           <motion.div
             initial={{ x: 32, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -243,35 +241,29 @@ export default function ContactPage() {
             <InfoCard
               icon={<MapPin size={20} strokeWidth={1.8} />}
               title="Our Location"
-              lines={["Cleriky Global", "United States"]}
-              href="https://maps.google.com/?q=United+States"
+              lines={["Cleriky Global", "Ahmedabad, India"]}
+              href="https://maps.google.com/?q=Ahmedabad,India"
               delay={0.3}
             />
             <InfoCard
               icon={<Mail size={20} strokeWidth={1.8} />}
               title="Email Us"
-              lines={["shwetaguptas2710@gmail.com"]}
-              href="mailto:shwetaguptas2710@gmail.com"
+              lines={["vinita@cleriky.com"]}
+              href="mailto:vinita@cleriky.com"
               delay={0.4}
             />
             <InfoCard
               icon={<Phone size={20} strokeWidth={1.8} />}
               title="Call Us"
-              lines={["+1 (XXX) XXX-XXXX", "Mon – Fri, 9 AM – 6 PM EST"]}
+              lines={["+1 (XXX) XXX-XXXX"]}
               href="tel:+10000000000"
               delay={0.5}
-            />
-            <InfoCard
-              icon={<Clock size={20} strokeWidth={1.8} />}
-              title="Working Hours"
-              lines={["EST  9:00 AM – 6:00 PM", "GMT  2:00 PM – 11:00 PM"]}
-              delay={0.6}
             />
           </motion.div>
         </div>
       </section>
 
-      {/* ══ FORM + MAP ════════════════════════════════════════════════════ */}
+      {/* ══ FORM + SIDE PANEL ═════════════════════════════════════════════ */}
       <section className="py-24 px-6 bg-[#f6f8fb]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-10 items-start">
           {/* Form — 3 cols */}
@@ -461,54 +453,12 @@ export default function ContactPage() {
 
           {/* Right panel — 2 cols */}
           <div className="lg:col-span-2 space-y-6">
-            {/* USA Map embed */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="rounded-3xl overflow-hidden border border-slate-200 shadow-sm"
-            >
-              <iframe
-                title="Cleriky Global — United States"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24697473.51643038!2d-113.75976539999999!3d36.2048400!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                width="100%"
-                height="260"
-                style={{ border: 0, display: "block" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              {/* Map footer */}
-              <div className="bg-white px-5 py-4 border-t border-slate-100">
-                <div className="flex items-center gap-3">
-                  <MapPin size={16} className="text-[#c46a2d] flex-shrink-0" />
-                  <div>
-                    <p className="text-sm font-semibold text-[#0B1F3B]">
-                      Cleriky Global
-                    </p>
-                    <p className="text-xs text-slate-400 mt-0.5">
-                      United States
-                    </p>
-                  </div>
-                  <a
-                    href="https://maps.google.com/?q=United+States"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ml-auto flex items-center gap-1 text-xs text-[#c46a2d] font-medium hover:underline whitespace-nowrap"
-                  >
-                    Open in Maps <ArrowRight size={12} />
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
             {/* What happens next */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.1 }}
               className="bg-white rounded-3xl border border-slate-200 p-7 shadow-sm"
             >
               <p className="text-xs uppercase tracking-[0.25em] text-[#c46a2d] font-medium mb-5">
@@ -549,12 +499,12 @@ export default function ContactPage() {
               </div>
             </motion.div>
 
-            {/* Global coverage card */}
+            {/* Quick contact CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.2 }}
               className="bg-[#0B1F3B] rounded-2xl p-6 relative overflow-hidden"
             >
               <div
@@ -566,15 +516,27 @@ export default function ContactPage() {
                 }}
               />
               <div className="relative z-10 flex items-center gap-3 mb-3">
-                <Globe size={16} className="text-[#c46a2d]" />
+                <Mail size={16} className="text-[#c46a2d]" />
                 <p className="text-xs uppercase tracking-[0.2em] text-[#c46a2d] font-medium">
-                  Global Coverage
+                  Prefer to Email Directly?
                 </p>
               </div>
-              <p className="relative z-10 text-white text-sm font-serif leading-relaxed">
-                We serve firms across the US, UK, UAE, Canada, Australia, and 6+
-                other countries — delivering precision at every timezone.
+              <p className="relative z-10 text-white text-sm font-serif leading-relaxed mb-4">
+                Reach us anytime at{" "}
+                <a
+                  href="mailto:vinita@cleriky.com"
+                  className="text-[#c46a2d] underline underline-offset-2 hover:text-white transition-colors duration-200"
+                >
+                  vinita@cleriky.com
+                </a>{" "}
+                and we&apos;ll get back to you within one business day.
               </p>
+              <a
+                href="mailto:vinita@cleriky.com"
+                className="relative z-10 inline-flex items-center gap-2 text-xs font-semibold text-white border border-white/20 rounded-full px-4 py-2 hover:bg-white/10 transition-all duration-200"
+              >
+                Send an Email <ArrowRight size={12} />
+              </a>
             </motion.div>
           </div>
         </div>
