@@ -100,10 +100,10 @@ const features: Feature[] = [
     tagline: "Cross-Border Expertise",
     desc: "Compliant services across 10+ countries.",
     detail:
-      "UK GAAP, US GAAP, IFRS, UAE VAT, Indian GST — our teams carry the jurisdictional fluency your cross-border clients expect. We track regulatory changes proactively so your compliance never lags.",
+      "UK GAAP, US GAAP, IFRS, Indian GST — our teams carry the jurisdictional fluency your cross-border clients expect. We track regulatory changes proactively so your compliance never lags.",
     bullets: [
       "GAAP, IFRS, VAT & transfer pricing",
-      "UK, UAE, US & Indian subcontinent",
+      "UK, US & Indian subcontinent",
       "Jurisdiction-specific compliance tracking",
     ],
     icon: <Globe size={22} strokeWidth={1.8} />,
