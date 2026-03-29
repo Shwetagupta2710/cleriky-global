@@ -46,7 +46,7 @@ const services: Service[] = [
       "Financial Statement Preparation",
     ],
     icon: <Calculator size={22} strokeWidth={1.8} />,
-    image: "/service2.jpg", // replace with your actual image
+    image: "/services2.jpg", // replace with your actual image
     imageAlt: "Accounting and bookkeeping professionals",
   },
   {

@@ -131,8 +131,8 @@ const stats: StatItem[] = [
     sublabel: "Multi-tier QC process",
   },
   {
-    value: 99,
-    suffix: ".9%",
+    value: 99.9,
+    suffix: "%",
     label: "Process Precision",
     sublabel: "Built on layered review",
   },
