@@ -26,7 +26,7 @@ interface Service {
   desc: string;
   bullets: string[];
   icon: React.ReactNode;
-  image: string; // put your image paths here
+  image: string;
   imageAlt: string;
 }
 
