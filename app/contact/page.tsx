@@ -17,9 +17,9 @@ import {
 import Footer from "@/components/sections/Footer";
 
 // ─── EmailJS IDs — fill these in after EmailJS setup ─────────────────────────
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID = "service_7a4akrh";
+const EMAILJS_TEMPLATE_ID = "template_p8f00e8";
+const EMAILJS_PUBLIC_KEY = "o1G3uPH7vFtln-RVG";
 // ─────────────────────────────────────────────────────────────────────────────
 
 interface FormState {
@@ -144,7 +144,6 @@ export default function ContactPage() {
           firm_name: form.firm_name || "Not provided",
           service: form.service || "Not specified",
           message: form.message,
-          to_email: "vinita@cleriky.com",
           reply_to: form.from_email,
         },
         EMAILJS_PUBLIC_KEY,
