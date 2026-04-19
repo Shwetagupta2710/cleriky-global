@@ -254,7 +254,7 @@ export default function ContactPage() {
             <InfoCard
               icon={<Phone size={20} strokeWidth={1.8} />}
               title="Call Us"
-              lines={["+1 (XXX) XXX-XXXX"]}
+              lines={["(949) 919-7919"]}
               href="tel:+10000000000"
               delay={0.5}
             />

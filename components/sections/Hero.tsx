@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -46,9 +47,13 @@ export default function Hero() {
             </button>
 
             {/* Secondary CTA */}
-            <button className="px-8 py-3 rounded-full border border-[#0B1F3B] text-[#0B1F3B] bg-white hover:bg-[#eaf1fb] hover:border-[#c46a2d] transition-all duration-300 ease-out hover:-translate-y-[2px]">
-              Explore Services
-            </button>
+            <Link
+              href="/services"
+              className="px-8 py-3 rounded-full border border-[#0B1F3B] text-[#0B1F3B] bg-white hover:bg-[#eaf1fb] hover:border-[#c46a2d] transition-all duration-300 ease-out hover:-translate-y-[2px] inline-block text-center"
+            >
+              {" "}
+              Explore Services{" "}
+            </Link>
           </div>
         </motion.div>
 

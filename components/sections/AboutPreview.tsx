@@ -98,14 +98,14 @@ export default function AboutPreview() {
           {/* CTA */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link
-              href="#contact"
+              href="/contact"
               className="px-8 py-3 rounded-full bg-[#0B1F3B] text-white font-medium transition-all duration-300 hover:bg-[#c46a2d] hover:-translate-y-[2px] hover:shadow-lg"
             >
               Schedule a Consultation
             </Link>
 
             <Link
-              href="#services"
+              href="/services"
               className="px-8 py-3 rounded-full border border-[#0B1F3B] text-[#0B1F3B] hover:bg-[#eaf1fb] hover:border-[#c46a2d] transition-all duration-300 hover:-translate-y-[2px]"
             >
               View Our Services

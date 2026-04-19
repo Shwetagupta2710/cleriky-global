@@ -12,6 +12,11 @@ const logos = [
   "/logos/a2x.svg",
   "/logos/syft.png",
   "/logos/rippling.svg",
+  "/logos/amazon.png",
+  "/logos/asana.png",
+  "/logos/clickup.png",
+  "/logos/gusto.png",
+  "/logos/paypal.png",
 ];
 
 export default function Software() {

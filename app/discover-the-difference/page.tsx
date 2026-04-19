@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -373,9 +373,12 @@ export default function DiscoverDifference() {
               <button className="px-8 py-3 rounded-full bg-[#0B1F3B] text-white text-sm font-semibold transition-all duration-300 hover:bg-[#c46a2d] hover:-translate-y-[2px] hover:shadow-lg">
                 Book a Call
               </button>
-              <button className="px-8 py-3 rounded-full border border-[#0B1F3B] text-[#0B1F3B] bg-white hover:bg-[#eaf1fb] hover:border-[#c46a2d] transition-all duration-300 ease-out hover:-translate-y-[2px]">
+              <Link
+                href="/services"
+                className="px-8 py-3 rounded-full border border-[#0B1F3B] text-[#0B1F3B] bg-white hover:bg-[#eaf1fb] hover:border-[#c46a2d] transition-all duration-300 ease-out hover:-translate-y-[2px] inline-block text-center"
+              >
                 Explore Services
-              </button>
+              </Link>
             </div>
           </motion.div>
 
